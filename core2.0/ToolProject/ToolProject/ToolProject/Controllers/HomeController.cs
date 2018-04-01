@@ -11,6 +11,7 @@ namespace ToolProject.Controllers
 {
     public class HomeController : Controller
     {
+        const string message = "Indent Json Object Here";
         public IActionResult Index()
         {
             return View();
@@ -32,7 +33,7 @@ namespace ToolProject.Controllers
 
         public IActionResult IndentJson()
         {
-            ViewData["Message"] = "Ident Json Object Here";
+            ViewData["Message"] = message;
 
             return View();
         }
@@ -40,7 +41,7 @@ namespace ToolProject.Controllers
         [HttpPost]
         public IActionResult IndentJson(JsonBody json)
         {
-            ViewData["Message"] = "Ident Json Object Here";
+            ViewData["Message"] = message;
 
             json.Output = JsonHelper.formatJson(json.Description);
 
