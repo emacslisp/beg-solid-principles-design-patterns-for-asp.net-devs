@@ -29,6 +29,13 @@ namespace ToolProject.Controllers
             return View();
         }
 
+        public IActionResult IndentJson()
+        {
+            ViewData["Message"] = "Ident Json Object Here";
+
+            return View();
+        }
+
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
