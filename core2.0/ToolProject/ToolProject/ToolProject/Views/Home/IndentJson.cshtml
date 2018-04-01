@@ -1,4 +1,4 @@
-﻿@Model ToolProject.Models.JsonBody
+﻿@model ToolProject.Models.JsonBody
 @{
     ViewData["Title"] = "Indent Json";
 }
@@ -8,13 +8,14 @@
 <div class="row">
 
     <div class="col-md-12">
-        <textarea rows="4" cols="50" id="jsonInput"></textarea>
+        <form method="post">
+            @Html.TextArea("Description", null, new { @class = "form-control", @rows="8", @cols="50"})
+            <input type="submit" value="Submit" class="submit" />
+        </form>
     </div>
 
-
-
     <div class="col-md-12">
-        <textarea rows="4" cols="50" id="jsonOutput"></textarea>
+        @Html.TextArea("Output", null, new { @class = "form-control" })
     </div>
 
 </div>

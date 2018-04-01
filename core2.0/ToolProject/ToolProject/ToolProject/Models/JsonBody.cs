@@ -9,6 +9,9 @@ namespace ToolProject.Models
     public class JsonBody
     {
         [DataType(DataType.MultilineText)]
-        public string Body { get; set; }
+        public string Description { get; set; }
+
+        [DataType(DataType.MultilineText)]
+        public string Output { get; set; }
     }
 }

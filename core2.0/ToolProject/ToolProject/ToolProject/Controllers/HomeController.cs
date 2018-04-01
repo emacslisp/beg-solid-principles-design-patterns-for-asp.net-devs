@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ToolProject.Models;
+using ToolProject.Utilities;
 
 namespace ToolProject.Controllers
 {
@@ -35,6 +36,17 @@ namespace ToolProject.Controllers
 
             return View();
         }
+
+        [HttpPost]
+        public IActionResult IndentJson(JsonBody json)
+        {
+            ViewData["Message"] = "Ident Json Object Here";
+
+            json.Output = JsonHelper.formatJson(json.Description);
+
+            return View(json);
+        }
+
 
         public IActionResult Error()
         {
