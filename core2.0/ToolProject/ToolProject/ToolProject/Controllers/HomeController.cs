@@ -44,6 +44,11 @@ namespace ToolProject.Controllers
 
             json.Output = JsonHelper.formatJson(json.Description);
 
+            if(!string.IsNullOrEmpty(json.Description) && string.IsNullOrEmpty(json.Output))
+            {
+                json.Output = "Invalid Json Input";
+            }
+
             return View(json);
         }
 
