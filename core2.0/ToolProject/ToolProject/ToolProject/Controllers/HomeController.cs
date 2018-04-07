@@ -12,6 +12,7 @@ namespace ToolProject.Controllers
     public class HomeController : Controller
     {
         const string message = "Indent Json Object Here";
+        const string xmlMessage = "Indent xml Here";
         public IActionResult Index()
         {
             return View();
@@ -51,6 +52,29 @@ namespace ToolProject.Controllers
             }
 
             return View(json);
+        }
+
+
+        public IActionResult IndentXML()
+        {
+            ViewData["Message"] = xmlMessage;
+
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult IndentXML(XMLBody xml)
+        {
+            ViewData["Message"] = xmlMessage;
+
+            xml.Output = XMLHelper.formatXML(xml.Description);
+
+            if (!string.IsNullOrEmpty(xml.Description) && string.IsNullOrEmpty(xml.Output))
+            {
+                xml.Output = "Invalid Json Input";
+            }
+
+            return View(xml);
         }
 
 

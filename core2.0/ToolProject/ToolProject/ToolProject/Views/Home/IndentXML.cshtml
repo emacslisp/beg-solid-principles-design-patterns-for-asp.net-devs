@@ -1,0 +1,26 @@
+﻿@model ToolProject.Models.XMLBody
+@{
+    ViewData["Title"] = "Indent XML";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>@ViewData["Message"]</h3>
+
+<div class="row">
+
+    <div class="col-md-12">
+        <form method="post">
+            @Html.TextArea("Description", null, new { @class = "form-control", @rows = "8", @cols = "50" })
+            <input type="submit" value="Indent" class="submit" />
+        </form>
+    </div>
+
+    <div class="col-md-12">
+        @Html.TextArea("Output", null, new
+        {
+            @class = "form-control",
+            @rows = "8",
+            @cols = "50"
+        })
+    </div>
+
+</div>
